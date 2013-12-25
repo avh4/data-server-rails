@@ -34,4 +34,11 @@ describe TransactionsController do
       end
     end
   end
+
+  describe '#create' do
+    it 'creates a record in the database' do
+      post :create, [["k10", "v10"]].to_json, app_id: app_id
+      Transaction.find_by(app_id: app_id, key: "k10", value: "v10").should_not be_nil
+    end
+  end
 end
