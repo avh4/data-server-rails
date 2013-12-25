@@ -43,3 +43,11 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :test do
+  gem 'rspec-rails'
+end
+
+group :development do
+  gem 'foreman'
+end
