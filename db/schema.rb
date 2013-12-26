@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131225052949) do
+ActiveRecord::Schema.define(version: 20131226055809) do
 
   create_table "transactions", force: true do |t|
     t.string   "app_id",     null: false
     t.string   "key",        null: false
     t.string   "value"
     t.datetime "created_at"
+    t.string   "user_id",    null: false
   end
 
-  add_index "transactions", ["app_id", "key"], name: "index_transactions_on_app_id_and_key"
+  add_index "transactions", ["app_id", "user_id", "key"], name: "index_transactions_on_app_id_and_user_id_and_key"
 
 end
