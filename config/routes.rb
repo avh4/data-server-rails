@@ -1,5 +1,5 @@
 DataServer::Application.routes.draw do
-  get 'apps/:app_id/from/:last' => 'transactions#get', constraints: { app_id: /.*/ }
+  get 'apps/:app_id' => 'transactions#get', constraints: { app_id: /.*/ }
   post 'apps/:app_id' => 'transactions#create', constraints: { app_id: /.*/ }
 
   # The priority is based upon order of creation: first created -> highest priority.
